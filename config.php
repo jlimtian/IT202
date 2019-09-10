@@ -1,8 +1,8 @@
 <?php
-$database="";
-$username="";
-$password="";
-$host="";
+$database="jojo";
+$username="dio";
+$password="ceasar";
+$host="erina";
 ?>
 
 
