@@ -1,8 +1,9 @@
 ^<?php
-$database="jojo";
-$username="dio";
-$password="ceasar";
-$host="erina";
+$host="sql1.njit.edu";
+$database="jl863";
+$username="jl863";
+$password="???";
 ?>
+
 
 
