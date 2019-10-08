@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="em">
+
+<head>
+    <!-- meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, 
+        shrink-to-fit=no">
+</head>
+
+<body>
+    <header>
+        <div class="header" id="myHeader">
+            <h1>Sign In</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="signin" id="mySignIn">
+            <form method="POST">
+                <div class="form" id="myForm">
+                    <!-- Username -->
+                    <label for="username">Username</label><br>
+                    <input type="username" placeholder="my username" name="username"
+                    id="username" required>
+                    <br><br>
+                    <!-- Password -->
+                    <label for="password">Password</label><br>
+                    <input type="password" placeholder="mypassword" name="password1" 
+                    id="password1" required><br><br>
+                    <label for="password">Confirm Password</label><br>
+                    <input type="password" placeholder="confirm mypassword" name="password2" 
+                    id="password2" required><br><br>
+                    <!-- Submit -->
+                    <button type="submit" class="submit" name="signIn" value="submit"
+                        onclick="return Validate()">Sign In</button><br>
+                </div>
+            </form>
+        </div>
+
+    <!-- javascript -->
+    <script>
+        function Validate() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password1").value;
+            var confirmPassword = document.getElementById("password2").value;
+            if (password != confirmPassword) {
+                alert("Passwords must match.");
+                return false;
+            }
+            else {
+                return true;
+            } 
+        }
+    </script>
+    </main>
+    
+</body>
+
+</html>
