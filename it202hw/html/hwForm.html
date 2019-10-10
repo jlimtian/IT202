@@ -17,11 +17,11 @@
 
     <main>
         <div class="signin" id="mySignIn">
-            <form method="POST">
+            <form id="frm" method="POST">
                 <div class="form" id="myForm">
                     <!-- Username -->
                     <label for="username">Username</label><br>
-                    <input type="username" placeholder="my username" name="username"
+                    <input type="username" placeholder="myusername" name="username"
                     id="username" required>
                     <br><br>
                     <!-- Password -->
@@ -31,9 +31,15 @@
                     <label for="password">Confirm Password</label><br>
                     <input type="password" placeholder="confirm mypassword" name="password2" 
                     id="password2" required><br><br>
+                    <select id="cardtype" name="cards" required> 
+                            <option selected disabled value="default">Select One</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
                     <!-- Submit -->
                     <button type="submit" class="submit" name="signIn" value="submit"
-                        onclick="return Validate()">Sign In</button><br>
+                        onclick="Validate(); return validateCard()">Sign In</button><br>
                 </div>
             </form>
         </div>
@@ -52,9 +58,18 @@
                 return true;
             } 
         }
+        function validateCard() {
+            var value = document.getElementById("cardtype").value;
+            if(value == "default") {
+                alert("Gender must be selected.")
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
     </script>
     </main>
     
 </body>
-
 </html>
