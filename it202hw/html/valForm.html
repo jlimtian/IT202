@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="em">
+
+<head>
+    <!-- meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, 
+        shrink-to-fit=no">
+</head>
+
+<body>
+
+    <header>
+        <div class="header" id="myHeader">
+            <h3>Sign In</h3>
+        </div>
+    </header>
+
+    <form id="frm" method="POST">
+        <!-- Email & Email Confirmation -->
+        <label for="labemail">Email</label><br>
+        <input type="email" placeholder="myemail@email.com" name="email"
+            id="email"><br><br>
+        <label for="labconfemail">Email</label><br>
+        <input type="confemail" placeholder="myemail@email.com" name="confemail"            
+            id="confemail"><br><br>
+        <label for="labpassword">Password</label><br>
+        <!-- Password & Password Confirmation -->
+        <input type="password" placeholder="mypassword" name="password" 
+            id="password"><br><br>
+        <label for="labconfpassword">Confirm Password</label><br>
+        <input type="password" placeholder="confirm mypassword" name="confpassword" 
+            id="confpassword"><br><br>
+        <!-- Username -->
+        <label for="labusername">Username</label><br>
+        <input type="username" placeholder="myusername" name="username"
+            id="username"><br><br>
+        <!-- Submit -->
+        <button type="submit" class="submit" name="signIn" value="submit"
+            onclick="validateFields(); return confirmFields()">Sign In</button><br>
+    </form>
+
+    <script>
+        function validateFields() {
+            var email = document.getElementById("email").value;
+            var confemail = document.getElementById("confemail").value;
+            var password = document.getElementById("password").value;
+            var confpassword = document.getElementById("confpassword").value;
+            var username = document.getElementById("username").value;
+
+            if (email == 0) {
+                alert ("You must enter email."); 
+                return false;
+            }
+            if (confemail == 0) {
+                alert ("You must confirm email."); 
+                return false;
+            }
+            if (password == 0) {
+                alert ("You must enter password."); 
+                return false;
+            }
+            if (confpassword == 0) {
+                alert ("You must confirm password."); 
+                return false;
+            }
+            if (username == 0) {
+                alert ("You must enter a username."); 
+                return false;
+            }
+            else {
+                return true ;
+            }
+        }
+        
+        function confirmFields() {
+            var email = document.getElementById("email").value;
+            var confemail = document.getElementById("confemail").value;
+            var password = document.getElementById("password").value;
+            var confpassword = document.getElementById("confpassword").value;
+
+            if (email != confemail) {
+                alert("Emails must match.")
+                return false;
+            }
+            if (password != confpassword) {
+                alert("Passwords must match.")
+            }
+            else {
+                return true;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
