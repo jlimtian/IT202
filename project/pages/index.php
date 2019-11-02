@@ -1,4 +1,9 @@
 <!-- Developer: Juline Limtian, IS202-009, Fall 2019 -->
+<?php
+     	include(signin.php);
+        valLogin();
+?>
+
 <!DOCTYPE html>
 <html lang="em">
 
@@ -15,14 +20,13 @@
 
     <!-- Favicon and Tab Head -->
     <link rel='icon' href='../images/favicon.png' type='image/x-icon'/>
-    <title>Sign Up | XPRESS</title>
+    <title>Sign In | XPRESS</title>
 </head>
 
 <body>
     <header>
         <div class="header" id="myHeader">
-            <a href="../pages/index.html"><img src="../images/favicon.png" 
-                alt="Icon"></a>
+            <img src="../images/favicon.png" alt="Icon"> 
             <h1>XPRESS</h1>
         </div>
     </header>
@@ -31,23 +35,22 @@
         <!-- Background Image -->
         <!-- <img src="../images/background.gif" alt="Background"> -->
         <!-- Sign In Form -->
-        <div class="signUp" id="mySignUp">
+        <div class="signin" id="mySignIn">
             <img src="../images/background2.jpg" alt="Background">
-            <form action="forms/signup.php" method="POST">
-                <h3>Sign Up</h3><br><br>
+            <form action="#" method="POST">
+                <h3>Sign In</h3><br><br>
                 <div class="form" id="myForm">
-                    <!-- Get Login Email -->
+                    <!-- Login Email -->
                     <label for="email">Email</label><br>
-                    <input type="email" placeholder="myemail@email.com" name="email"
+                    <input type="email" id="email" placeholder="myemail@email.com" name="email"
                     pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required><br><br>
-                    <!-- Get Password -->
-                    <label for="password">Set Password</label><br>
-                    <input type="password" placeholder="mypassword" name="password" 
+                    <!-- Password -->
+                    <label for="password">Password</label><br>
+                    <input type="password" id="password" placeholder="mypassword" name="password" 
                     required><br><br>
-                    <label for="password">Re-Enter Password</label><br>
-                    <input type="password" placeholder="mypassword" name="password" 
-                    required><br><br>
-                    <!-- Sign Up -->
+                    <!-- Sign In / Sign Up (links to another page/form) -->
+                    <button type="submit" class="submit" name="signIn" value="submit">
+                        Sign In</button><br><br>
                     <button onclick="window.location.href = '../pages/signup.html';" 
                         type="submit" class="submit" name="signUp" value="submit">
                         Sign Up</button><br>
