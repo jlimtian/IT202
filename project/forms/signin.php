@@ -1,3 +1,4 @@
+
 # Developer: Juline Limtian, IS202-009, Fall 2019 
 <?php
 //error checking
@@ -12,8 +13,8 @@ function valLogin() {
         
         //connect to database
         $conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
-        $db = new PDO($conn_string, $email, $password);
-        $select_query = "select password from `LoginPage` where email=:email";
+        $db = new PDO($conn_string, $username, $password);
+        $select_query = "select password from `TestUsers` where email=:email";
         $stmt->db->prepare($select_query);
         $stmt->bindParam(':email', $email);
         $response = $stmt->fetch(PDO::ASSOC);
