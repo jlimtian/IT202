@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 
 function valLogin() {
     if(isset($_POST['email']) && isset($_POST['password'])) {
-        $login_email = $_POST['email'];
+        $email = $_POST['email'];
         require("config.php");
         
         //connect to database
@@ -15,7 +15,7 @@ function valLogin() {
         $db = new PDO($conn_string, $email, $password);
         $select_query = "select password from `LoginPage` where email=:email";
         $stmt->db->prepare($select_query);
-        $stmt->bindParam(':email', $login_email);
+        $stmt->bindParam(':email', $email);
         $response = $stmt->fetch(PDO::ASSOC);
         
         //check passwords
