@@ -1,5 +1,8 @@
-<!-- Developer: Juline Limtian, IS202-009, Fall 2019 -->
+
 <?php
+	ini_set('display_errors',1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ALL);
      	include("../forms/signin.php");
         valLogin();
 ?>
@@ -13,20 +16,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, 
         shrink-to-fit=no">
     <!-- main.css -->
-    <link rel="stylesheet" href="../styles/main.css">
-
+    <!-- <link rel="stylesheet" href="../styles/main.css">
+	-->
     <!-- main.js -->
     <script src="../styles/main.js"></script>
 
     <!-- Favicon and Tab Head -->
-    <link rel='icon' href='../images/favicon.png' type='image/x-icon'/>
-    <title>Sign In | XPRESS</title>
+    <!-- <link rel='icon' href='../images/favicon.png' type='image/x-icon'/>
+    <title>Sign In | XPRESS</title> -->
 </head>
 
 <body>
     <header>
         <div class="header" id="myHeader">
-            <img src="../images/favicon.png" alt="Icon"> 
+            <!-- <img src="../images/favicon.png" alt="Icon"> -->
             <h1>XPRESS</h1>
         </div>
     </header>
@@ -36,8 +39,8 @@
         <!-- <img src="../images/background.gif" alt="Background"> -->
         <!-- Sign In Form -->
         <div class="signin" id="mySignIn">
-            <img src="../images/background2.jpg" alt="Background">
-            <form action="#" method="POST">
+            <!-- <img src="../images/background2.jpg" alt="Background"> -->
+            <form method="POST">
                 <h3>Sign In</h3><br><br>
                 <div class="form" id="myForm">
                     <!-- Login Email -->
@@ -49,11 +52,13 @@
                     <input type="password" id="password" placeholder="mypassword" name="password" 
                     required><br><br>
                     <!-- Sign In / Sign Up (links to another page/form) -->
-                    <button type="submit" class="submit" name="signIn" value="submit">
-                        Sign In</button><br><br>
-                    <button onclick="window.location.href = '../pages/signup.html';" 
+                    <input type="submit" class="submit" name="signIn" value="Sign In">
+			<br><br>
+		    <!-- <button type="submit" class="submit" name="signIn" value="submit">
+                        Sign In</button><br><br> -->
+                    <!-- <button onclick="window.location.href = '../pages/signup.html';" 
                         type="submit" class="submit" name="signUp" value="submit">
-                        Sign Up</button><br>
+                        Sign Up</button><br> -->
                 </div>
             </form>
         </div>
@@ -63,8 +68,8 @@
 
 <footer>
         <div class="footer" id="myFooter">
-                <span class="text-muted">&copy; Juline Limtian, 2019 |  
-                    Terms Of Use  |  Privacy Statement</span>
+                <!-- <span class="text-muted">&copy; Juline Limtian, 2019 |  
+                    Terms Of Use  |  Privacy Statement</span> -->
         </div>
 </footer>
 

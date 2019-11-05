@@ -1,5 +1,4 @@
-
-# Developer: Juline Limtian, IS202-009, Fall 2019 
+ 
 <?php
 //error checking
 ini_set('display_errors',1);
@@ -7,23 +6,25 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 function valLogin() {
-    if(isset($_POST['email']) && isset($_POST['password'])) {
-        $email = $_POST['email'];
-        require("config.php");
+    	// echo 'hello';
+	if(isset($_POST['email']) && isset($_POST['password'])) {
+	// echo 'world';        
+	$email = $_POST['email'];
+        $password = $_POST['password'];
+	require("config.php");
         
         //connect to database
         $conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
         $db = new PDO($conn_string, $username, $password);
-        $select_query = "select password from `TestUsers` where email=:email";
-        $stmt->db->prepare($select_query);
-        $stmt->bindParam(':email', $email);
-        $response = $stmt->fetch(PDO::ASSOC);
+        $select_query = "select password, id from `TestUsers` where email=:username";
+        $stmt = $db->prepare($select_query);
+        $stmt->bindParam(':username', $email);
+	$stmt->execute();
+        $response = $stmt->fetch(PDO::FETCH_ASSOC);
         
         //check passwords
         if($_POST['password'] == $response['password']) {
-     	    $message = "Welcome, " . var_export($_POST['id'], true);
-            echo "<script> alert('$message'); </script>";
-	    // echo 'Welcome, ' . var_export($_POST['id'], true);
+	    echo 'Welcome, ' . $response["id"];
         }
         else {
             echo 'Incorrect Login';
