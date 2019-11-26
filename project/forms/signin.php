@@ -1,4 +1,3 @@
- 
 <?php
 //error checking
 ini_set('display_errors',1);
@@ -23,12 +22,14 @@ function valLogin() {
         $response = $stmt->fetch(PDO::FETCH_ASSOC);
         
         //check passwords
-        if($_POST['password'] == $response['password']) {
-	    echo 'Welcome, ' . $response["id"];
+        if(password_verify($_POST['password'] , $response['password'])) {
+	    // echo 'Welcome, ' . $response["id"];
+	    header('Location: ../pages/home.html');
         }
         else {
             echo 'Incorrect Login';
         }    
     }
 }
+valLogin();
 ?>

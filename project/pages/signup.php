@@ -1,4 +1,9 @@
 <!-- Developer: Juline Limtian, IS202-009, Fall 2019 -->
+<?php
+    include("../forms/signin.php");
+    valLogin();
+?>
+
 <!DOCTYPE html>
 <html lang="em">
 
@@ -8,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, 
         shrink-to-fit=no">
     <!-- main.css -->
-    <link rel="stylesheet" href="../styles/main.css">
+    <!-- <link rel="stylesheet" href="../styles/main.css"> -->
 
     <!-- main.js -->
     <script src="../styles/main.js"></script>
@@ -21,8 +26,8 @@
 <body>
     <header>
         <div class="header" id="myHeader">
-            <a href="../pages/index.html"><img src="../images/favicon.png" 
-                alt="Icon"></a>
+            <a href="../pages/index.html"> <!--<img src="../images/favicon.png" 
+                alt="Icon"> --> </a>
             <h1>XPRESS</h1>
         </div>
     </header>
@@ -32,8 +37,8 @@
         <!-- <img src="../images/background.gif" alt="Background"> -->
         <!-- Sign In Form -->
         <div class="signUp" id="mySignUp">
-            <img src="../images/background2.jpg" alt="Background">
-            <form action="forms/signup.php" method="POST">
+            <!-- <img src="../images/background2.jpg" alt="Background"> -->
+            <form action="../forms/signup.php" method="POST">
                 <h3>Sign Up</h3><br><br>
                 <div class="form" id="myForm">
                     <!-- Get Login Email -->
@@ -45,12 +50,10 @@
                     <input type="password" placeholder="mypassword" name="password" 
                     required><br><br>
                     <label for="password">Re-Enter Password</label><br>
-                    <input type="password" placeholder="mypassword" name="password" 
+                    <input type="password" placeholder="mypassword" name="confirm" 
                     required><br><br>
                     <!-- Sign Up -->
-                    <button onclick="window.location.href = '../pages/signup.html';" 
-                        type="submit" class="submit" name="signUp" value="submit">
-                        Sign Up</button><br>
+                    <input type="submit" class="submit" name="signUp" value="Sign Up"><br>
                 </div>
             </form>
         </div>
@@ -60,8 +63,8 @@
 
 <footer>
         <div class="footer" id="myFooter">
-                <span class="text-muted">&copy; Juline Limtian, 2019 |  
-                    Terms Of Use  |  Privacy Statement</span>
+                <!-- <span class="text-muted">&copy; Juline Limtian, 2019 |  
+                    Terms Of Use  |  Privacy Statement</span> -->
         </div>
 </footer>
 

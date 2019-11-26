@@ -1,10 +1,7 @@
-
+<!-- Developer: Juline Limtian, IS202-009, Fall 2019 -->
 <?php
-	ini_set('display_errors',1);
-	ini_set('display_startup_errors', 1);
-	error_reporting(E_ALL);
-     	include("../forms/signin.php");
-        valLogin();
+    include("../forms/signin.php");
+    valLogin();
 ?>
 
 <!DOCTYPE html>
@@ -13,35 +10,35 @@
 <head>
     <!-- meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, 
+    <meta name="viewport" content="width=device-width, initial-scale=1,
         shrink-to-fit=no">
     <!-- main.css -->
-    <!-- <link rel="stylesheet" href="../styles/main.css">
-	-->
+    <!-- <link rel="stylesheet" href="../styles/main.css"> -->
+
     <!-- main.js -->
     <script src="../styles/main.js"></script>
 
     <!-- Favicon and Tab Head -->
-    <!-- <link rel='icon' href='../images/favicon.png' type='image/x-icon'/>
-    <title>Sign In | XPRESS</title> -->
+    <link rel='icon' href='../images/favicon.png' type='image/x-icon'/>
+    <title>Sign In | XPRESS</title>
 </head>
 
 <body>
     <header>
-        <div class="header" id="myHeader">
+	<div class="header" id="myHeader">
             <!-- <img src="../images/favicon.png" alt="Icon"> -->
             <h1>XPRESS</h1>
         </div>
     </header>
 
     <main>
-        <!-- Background Image -->
+	<!-- Background Image -->
         <!-- <img src="../images/background.gif" alt="Background"> -->
         <!-- Sign In Form -->
         <div class="signin" id="mySignIn">
             <!-- <img src="../images/background2.jpg" alt="Background"> -->
-            <form method="POST">
-                <h3>Sign In</h3><br><br>
+            <form action="../forms/signin.php" method="POST">
+		<h3>Sign In</h3><br><br>
                 <div class="form" id="myForm">
                     <!-- Login Email -->
                     <label for="email">Email</label><br>
@@ -52,13 +49,10 @@
                     <input type="password" id="password" placeholder="mypassword" name="password" 
                     required><br><br>
                     <!-- Sign In / Sign Up (links to another page/form) -->
-                    <input type="submit" class="submit" name="signIn" value="Sign In">
-			<br><br>
-		    <!-- <button type="submit" class="submit" name="signIn" value="submit">
-                        Sign In</button><br><br> -->
-                    <!-- <button onclick="window.location.href = '../pages/signup.html';" 
+                    <input type="submit" class="submit" name="signIn" value="Sign In"><br><br>
+                    <button onclick="window.location.href = '../pages/signup.php';" 
                         type="submit" class="submit" name="signUp" value="submit">
-                        Sign Up</button><br> -->
+                        Sign Up</button><br>
                 </div>
             </form>
         </div>
