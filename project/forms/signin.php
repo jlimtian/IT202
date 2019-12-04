@@ -10,6 +10,7 @@ function valLogin() {
 	// echo 'world';        
 	$email = $_POST['email'];
         $password = $_POST['password'];
+	// $hash = password_hash($password, PASSWORD_BCRYPT);
 	require("config.php");
         
         //connect to database
@@ -20,7 +21,13 @@ function valLogin() {
         $stmt->bindParam(':username', $email);
 	$stmt->execute();
         $response = $stmt->fetch(PDO::FETCH_ASSOC);
-        
+        /*
+	$response = $stmt->execute(
+				array(":email"=>$email,
+					":password"=>$hash
+				)
+			);
+	*/
         //check passwords
         if(password_verify($_POST['password'] , $response['password'])) {
 	    // echo 'Welcome, ' . $response["id"];

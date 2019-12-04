@@ -53,7 +53,8 @@
                     <input type="password" placeholder="mypassword" name="confirm" 
                     required><br><br>
                     <!-- Sign Up -->
-                    <input type="submit" class="submit" name="signUp" value="Sign Up"><br>
+                    <input type="submit" class="submit" name="signUp" value="Sign Up"
+		    onclick="window.location.href = '../index.php';"><br>
                 </div>
             </form>
         </div>

@@ -26,14 +26,15 @@ if(isset($_POST['email'])
 			$conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
 			$db = new PDO($conn_string, $username, $password);
 			$stmt = $db->prepare("INSERT into `TestUsers` (`email`, `password`) VALUES(:email, :password)");
-			$result = $stmt->execute(
+			$response = $stmt->execute(
 				array(":email"=>$user,
 					":password"=>$hash
 				)
 			);
 			print_r($stmt->errorInfo());
 			
-			echo var_export($result, true);
+			// echo var_export($response, true);
+			header('Location: ../pages/index.php');
 		}
 		catch(Exception $e){
 			echo $e->getMessage();
