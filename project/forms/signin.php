@@ -31,7 +31,7 @@ function valLogin() {
         //check passwords
         if(password_verify($_POST['password'] , $response['password'])) {
 	    // echo 'Welcome, ' . $response["id"];
-	    header('Location: ../pages/home.html');
+	    header('Location: ../pages/home.php');
         }
         else {
             echo 'Incorrect Login';
